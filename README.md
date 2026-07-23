@@ -75,3 +75,5 @@ restricted network allowlist).
 5. Open the same drop in several browser tabs/incognito windows logged in as
    different users and try to exhaust the slots at once - the same
    no-overselling guarantee from the backend tests holds here too.
+
+**Built by [Shivansh Kumar](https://github.com/shivansh07adi-cloud)**
