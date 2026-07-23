@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  /* Ink + signal palette - deep near-black ink, amber "drop is live" signal,
+     cyan "admitted/success" signal. Two accent colors with distinct jobs,
+     not one generic neon-on-black. */
+  --ink: #0a0b0f;
+  --ink-raised: #12141b;
+  --ink-line: #23262f;
+  --paper: #f2f0ea;
+  --paper-dim: #9a9aa3;
+  --signal-amber: #ff7a33;
+  --signal-amber-dim: #7a3d1c;
+  --signal-cyan: #35d0c0;
+  --signal-cyan-dim: #1c5a52;
+
+  --font-display: var(--font-display);
+  --font-flap: var(--font-flap);
+  --font-body: var(--font-body);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-ink-line: var(--ink-line);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-signal-amber: var(--signal-amber);
+  --color-signal-amber-dim: var(--signal-amber-dim);
+  --color-signal-cyan: var(--signal-cyan);
+  --color-signal-cyan-dim: var(--signal-cyan-dim);
+  --font-display: var(--font-display);
+  --font-flap: var(--font-flap);
+  --font-body: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ink);
+}
+
+body {
+  background: transparent;
+  color: var(--paper);
+  font-family: var(--font-body), sans-serif;
+  min-height: 100vh;
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+::selection {
+  background: var(--signal-amber);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal-cyan);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
